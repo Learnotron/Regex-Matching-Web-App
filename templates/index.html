@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regex Matcher</title>
+    <style>
+        /* Overall Layout */
+        body {
+            background-color: #222; /* Dark background color */
+            font-family: Arial, sans-serif;
+            color: #fff; /* Text color */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .form-container {
+            max-width: 400px;
+            width: 100%;
+            padding: 20px;
+            background-color: #333;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+            box-sizing: border-box;
+            text-align: center;
+            /* Add margin-bottom to create space between divs */
+            margin-bottom: 7px;
+            margin-right: -400px
+        }
+        /* Form Styling */
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #555; /* Border color */
+            border-radius: 5px;
+            font-size: 16px;
+            background-color: #444; /* Input background color */
+            color: #fff; /* Input text color */
+            box-sizing: border-box;
+        }
+        button[type="submit"] {
+            background-color: #007bff; /* Button background color */
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 12px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        button[type="submit"]:hover {
+            background-color: #0056b3; /* Button hover background color */
+        }
+        /* Text Styling */
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #007bff; /* Heading color */
+        }
+        p {
+            font-size: 16px;
+            color: #ccc; /* Matched text color */
+            margin-bottom: 5px;
+        }
+        .no-match {
+            font-size: 16px;
+            color: #999; /* No match text color */
+            margin-top: 10px;
+        }
+        a {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #007bff; /* Link color */
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a:hover {
+            text-decoration: underline; /* Underline link on hover */
+        }
+        .link-container {
+            max-width: 400px;
+            width: 100%;
+            padding: 20px;
+            padding-top: 0px;
+            padding-right: 20px;
+            background-color: #191919;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+            box-sizing: border-box;
+            text-align: center;
+            /* Add margin-bottom to create space between divs */
+            margin-bottom: -400px;
+         /*   margin-left: 200px; */
+          /*  margin-right: 100px  */
+        }
+        
+        /* Styling for the link text */
+        .link-container a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            text-align = center;
+            margin-bottom: 0px;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Regex Matcher</h1>
+        <form action="/" method="post">
+            <input type="text" placeholder="Enter Your Regex Pattern" name="regex_pattern">
+            <input type="text" placeholder="Enter Your String" name="test_string">
+            <button type="submit">Find</button>
+        </form>
+        {% if matches %}
+            {% for match in matches %}
+                <p>Match {{ loop.index }}: {{ match }}</p>
+            {% endfor %}
+        {% else %}
+            <p class="no-match">No Match</p>
+        {% endif %}
+       
+        
+    </div>
+    <div class="link-container">
+        <a href="/email_validate.html">Try Our Email Validator</a>
+    </div>
+    
+</body>
+</html>
